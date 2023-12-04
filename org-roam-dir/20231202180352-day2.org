@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       e07e3c4d-b4ab-4c7a-9c48-89cca7587565
+:END:
+#+title: Day2
+#+date: [2023-12-02 Sat 18:03]
+#+startup: overview
+
+Need to rewrite what was written in [[id:00da906c-d6a3-4d11-83ae-c885e1d2d870][Day1]] but additionally we can have written numbers

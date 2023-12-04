@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       08cd54b2-9ca9-49a2-a188-7fc410486276
+:END:
+#+title: Puzzle exercise day1
+#+date: [2023-12-02 Sat 07:53]
+#+startup: overview
+
+Need to catenate first and last digit of every line in [[id:4d82616a-96e7-4168-b0d1-62634185421f][Puzzle input day1]], and then calculate the sum

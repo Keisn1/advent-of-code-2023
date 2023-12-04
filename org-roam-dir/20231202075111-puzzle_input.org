@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       4d82616a-96e7-4168-b0d1-62634185421f
+:END:
+#+title: Puzzle input day1
+#+date: [2023-12-02 Sat 07:51]
+#+startup: overview
+
+[[file:~/workspace/advent_of_code_2023/1/input.txt::nine92jnhgqzctpgbcbpz][Calibration document]]

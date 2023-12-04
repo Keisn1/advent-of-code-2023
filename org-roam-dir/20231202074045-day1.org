@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       00da906c-d6a3-4d11-83ae-c885e1d2d870
+:END:
+#+title: Day1
+#+date: [2023-12-02 Sat 07:40]
+#+startup: overview
+
+- read this https://go.dev/blog/strings
+- need to take into account how go is treating strings, and how Go encodes strings
+- needed to learn how to read a file in GO
+  - still don't know how to assess the number of lines in a text file
+- the algorithm is linear
+  - could be better when i use two pointers, but it becomes more difficult, since I need (wanted) to take into account non ASCII characters
+- need to write a function that returns a slice of strings, so i can decapsulate the reading from the rest of the algorithm
+Answer was 54601
+
+* [[id:4d82616a-96e7-4168-b0d1-62634185421f][Puzzle input day1]]
+* [[id:08cd54b2-9ca9-49a2-a188-7fc410486276][Puzzle exercise day1]]
