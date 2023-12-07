@@ -6,3 +6,9 @@
 #+startup: overview
 
 Need to rewrite what was written in [[id:00da906c-d6a3-4d11-83ae-c885e1d2d870][Day1]] but additionally we can have written numbers
+- learned about
+  - [[id:c7d16a70-a278-493d-953b-095383f5e6e9][Go range over slice]]
+  - [[id:4c852932-e95f-4bd9-a424-f6522192a666][Go range on maps]]
+  - [[id:bb1a70ef-06c9-4016-9193-dc5806c1d7f9][Go strings contains]]
+  - [[id:1e5625e1-d1ca-4693-bbaf-c0023cd3b143][Go strings index]]
+  - [[id:d103ba94-ae59-4e80-9685-e76ef36ae828][Go regexp package]]

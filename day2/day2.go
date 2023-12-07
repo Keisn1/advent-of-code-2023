@@ -5,37 +5,31 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"regexp"
 	"strconv"
+	"strings"
 	"unicode"
 )
 
-var numbers = map[string]int{
-	"one":   1,
-	"two":   2,
-	"three": 3,
-	"four":  4,
-	"five":  5,
-	"six":   6,
-	"seven": 7,
-	"eight": 8,
-	"nine":  9,
-}
+var nums = []string{"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"}
 
-func checkCurStrIsDigit(r []rune) int {
-	if len(r) < 3 {
+func getLastDigitInString(word string) int {
+	if len(word) < 3 {
 		return -1
 	}
-	if len(r) > 5 {
-		r = r[len(r)-5:]
+	if len(word) > 5 {
+		word = word[len(word)-5:]
 	}
 
-	re := regexp.MustCompile("(one|two|three|four|five|six|seven|eight|nine|zero)")
-	s, n := re.FindAllString(string(r), 2)
-	if s == "" {
-		return -1
+	lastDigit := -1
+	lastIdx := -1
+	for idxNum, numStr := range nums {
+		idx := strings.Index(word, numStr)
+		if idx > lastIdx {
+			lastDigit = idxNum
+			lastIdx = idx
+		}
 	}
-	return numbers[s]
+	return lastDigit
 }
 
 func setValues(c int, firstDigit bool, c1 *int, c2 *int) {
@@ -63,11 +57,10 @@ func getCalibrationValue(line string) int {
 		}
 
 		curStr = append(curStr, runeValue)
-		c := checkCurStrIsDigit(curStr)
+		c := getLastDigitInString(string(curStr))
 		if c != -1 {
 			setValues(c, firstDigit, &c1, &c2)
 			firstDigit = false
-			curStr = nil
 		}
 	}
 

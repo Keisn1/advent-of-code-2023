@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       42c2370c-6197-4c66-b179-098087ead66e
+:END:
+#+title: engine schematic (input day3)
+#+date: [2023-12-05 Tue 08:55]
+#+startup: overview
+
+- any number adjacent to a symbol, even diagonally, is a part number
+* Symbols
+- anything except numbers and period "."

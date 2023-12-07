@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       44fe595c-62cf-464f-a0d2-e15f510f2361
+:END:
+#+title: Day3
+#+date: [2023-12-05 Tue 08:54]
+#+startup: overview
+
+- need to add all the part numbers of the engine
+[[id:42c2370c-6197-4c66-b179-098087ead66e][engine schematic (input day3)]]
