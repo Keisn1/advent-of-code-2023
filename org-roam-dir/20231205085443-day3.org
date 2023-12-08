@@ -7,3 +7,6 @@
 
 - need to add all the part numbers of the engine
 [[id:42c2370c-6197-4c66-b179-098087ead66e][engine schematic (input day3)]]
+
+* [[id:e7abdf9d-8917-42d5-86c2-7492d1ac8481][Functions]]
+[[id:5c0600b2-4859-4b62-94b5-0c5dc490c252][asdf]]

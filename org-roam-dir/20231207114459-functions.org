@@ -1,0 +1,72 @@
+:PROPERTIES:
+:ID:       e7abdf9d-8917-42d5-86c2-7492d1ac8481
+:END:
+#+title: Functions
+#+date: [2023-12-07 Thu 11:44]
+#+startup: overview
+
+* Functions
+** [[id:fec94e6c-9c23-47f9-a480-758cc112b570][getLastIdxNumber]]
+#+begin_src go :results output :imports "fmt"
+import (
+	"unicode"
+)
+func getIdxLastDigit(j int, line string) int {
+	if len(line) == 0 {
+		return -1
+	}
+	if j == len(line)-1 {
+		return j
+	}
+	for idx, char := range line[j+1:] {
+		if !unicode.IsDigit(char) {
+			return idx+j
+		}
+	}
+	return len(line)-1
+}
+func main() {
+	test1 := "asdf1234;lkj"
+	j := 4
+	fmt.Println(test1[j:getIdxLastDigit(j,test1)+1])
+	test1 = "asdf1234"
+	j = 4
+	fmt.Println(test1[j:getIdxLastDigit(j,test1)+1])
+	test1 = ""
+	j = 0
+	fmt.Println(test1[j:getIdxLastDigit(j,test1)+1])
+	test1 = "1"
+	j = 0
+	fmt.Println(test1[j:getIdxLastDigit(j,test1)+1])
+}
+#+end_src
+
+#+RESULTS:
+: 1234
+: 1234
+:
+: 1
+** [[id:2b018fab-538f-43bb-bdf2-168c2812a2c2][isSymbol]]
+#+begin_src go :results output :imports "fmt"
+import "unicode"
+func isSymbol(char byte) bool {
+	if unicode.IsDigit(rune(char)) {
+		return false
+	}
+	if string(char) == "." {
+		return false
+	}
+	return true
+}
+func main() {
+	fmt.Println(isSymbol('.'))
+	fmt.Println(isSymbol('1'))
+	fmt.Println(isSymbol('!'))
+}
+#+end_src
+
+#+RESULTS:
+: false
+: false
+: true
+** [[id:fd51be6f-fba9-4a74-89e5-84447cedb814][checkAdjSymbol]]

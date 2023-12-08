@@ -1,0 +1,30 @@
+:PROPERTIES:
+:ID:       2b018fab-538f-43bb-bdf2-168c2812a2c2
+:END:
+#+title: isSymbol
+#+date: [2023-12-07 Thu 11:45]
+#+startup: overview
+
+* isSymbol
+#+begin_src go :results output :imports "fmt"
+import "unicode"
+func isSymbol(char byte) bool {
+	if unicode.IsDigit(rune(char)) {
+		return false
+	}
+	if string(char) == "." {
+		return false
+	}
+	return true
+}
+func main() {
+	fmt.Println(isSymbol('.'))
+	fmt.Println(isSymbol('1'))
+	fmt.Println(isSymbol('!'))
+}
+#+end_src
+
+#+RESULTS:
+: false
+: false
+: true

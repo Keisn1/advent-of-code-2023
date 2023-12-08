@@ -1,0 +1,47 @@
+:PROPERTIES:
+:ID:       fec94e6c-9c23-47f9-a480-758cc112b570
+:END:
+#+title: getLastIdxNumber
+#+date: [2023-12-07 Thu 11:45]
+#+startup: overview
+
+* getLastIdxNumber
+#+begin_src go :results output :imports "fmt"
+import (
+	"unicode"
+)
+func getIdxLastDigit(j int, line string) int {
+	if len(line) == 0 {
+		return -1
+	}
+	if j == len(line)-1 {
+		return j
+	}
+	for idx, char := range line[j+1:] {
+		if !unicode.IsDigit(char) {
+			return idx+j
+		}
+	}
+	return len(line)-1
+}
+func main() {
+	test1 := "asdf1234;lkj"
+	j := 4
+	fmt.Println(test1[j:getIdxLastDigit(j,test1)+1])
+	test1 = "asdf1234"
+	j = 4
+	fmt.Println(test1[j:getIdxLastDigit(j,test1)+1])
+	test1 = ""
+	j = 0
+	fmt.Println(test1[j:getIdxLastDigit(j,test1)+1])
+	test1 = "1"
+	j = 0
+	fmt.Println(test1[j:getIdxLastDigit(j,test1)+1])
+}
+#+end_src
+
+#+RESULTS:
+: 1234
+: 1234
+:
+: 1

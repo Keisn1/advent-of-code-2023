@@ -1,0 +1,122 @@
+:PROPERTIES:
+:ID:       fd51be6f-fba9-4a74-89e5-84447cedb814
+:END:
+#+title: checkAdjSymbol
+#+date: [2023-12-07 Thu 11:46]
+#+startup: overview
+
+#+begin_src go :results output :imports "fmt"
+import "unicode"
+
+func isSymbol(char byte) bool {
+	if unicode.IsDigit(rune(char)) {
+		return false
+	}
+	if string(char) == "." {
+		return false
+	}
+	return true
+}
+
+func checkAdjSymbol(row, idxFirstDigit, idxLastDigit int, lines []string) bool {
+	var rows []int
+	firstCol := idxFirstDigit
+	lastCol := idxLastDigit
+	if row > 0 {
+		rows = append(rows, row-1)
+	}
+	if row < len(lines)-1 {
+		rows = append(rows, row+1)
+	}
+	if idxFirstDigit > 0 {
+		firstCol--
+		if isSymbol(lines[row][firstCol]) {
+			return true
+		}
+	}
+	if idxFirstDigit < len(lines[0])-1 {
+		lastCol++
+		if isSymbol(lines[row][lastCol]) {
+			return true
+		}
+	}
+
+	for _, row := range rows {
+		for col := firstCol; col <= lastCol; col++ {
+			if isSymbol(lines[row][col]) {
+				return true
+			}
+		}
+	}
+
+	return false
+}
+
+func main() {
+	lines := []string{
+		".....",
+		".123.",
+		".....",
+	}
+	fmt.Println(checkAdjSymbol(1, 1, 3, lines))
+	lines = []string{
+		".....",
+		"$123.",
+		".....",
+	}
+	fmt.Println(checkAdjSymbol(1, 1, 3, lines))
+	lines = []string{
+		".....",
+		".123$",
+		".....",
+	}
+	fmt.Println(checkAdjSymbol(1, 1, 3, lines))
+	lines = []string{
+		"....$",
+		".123.",
+		".....",
+	}
+	fmt.Println(checkAdjSymbol(1, 1, 3, lines))
+	lines = []string{
+		".....",
+		".123.",
+		"$....",
+	}
+	fmt.Println(checkAdjSymbol(1, 1, 3, lines))
+	lines = []string{
+		".....",
+		".123.",
+		"..$..",
+	}
+	fmt.Println(checkAdjSymbol(1, 1, 3, lines))
+	lines = []string{
+		"..$..",
+		".123.",
+		".....",
+	}
+	fmt.Println(checkAdjSymbol(1, 1, 3, lines))
+	lines = []string{
+		"$...",
+		"123.",
+		"....",
+	}
+	fmt.Println(checkAdjSymbol(1, 0, 2, lines))
+	lines = []string{
+		"....",
+		"123.",
+		"....",
+	}
+	fmt.Println(checkAdjSymbol(1, 0, 2, lines))
+}
+#+end_src
+
+#+RESULTS:
+: false
+: true
+: true
+: true
+: true
+: true
+: true
+: true
+: false
