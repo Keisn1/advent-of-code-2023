@@ -77,48 +77,48 @@
 // 	return red, green, blue
 // }
 
-// func roundsPossible(rounds string) bool {
+// func parseRounds(rounds string) map[string]int {
 // 	sliceOfRounds := strings.Split(rounds, ";")
-// 	maxOfCubes := getMaxOfCubes()
+// 	maxOfCubesGame := make(map[string]int)
+// 	maxOfCubesGame["red"] = 0
+// 	maxOfCubesGame["green"] = 0
+// 	maxOfCubesGame["blue"] = 0
 // 	for _, round := range sliceOfRounds {
 // 		red, green, blue := parseRound(round)
-// 		if red > maxOfCubes["red"] || blue > maxOfCubes["blue"] || green > maxOfCubes["green"] {
-// 			return false
-// 		}
+// 		maxOfCubesGame["red"] += red
+// 		maxOfCubesGame["green"] += green
+// 		maxOfCubesGame["blue"] += blue
 // 	}
 
-// 	return true
+// 	return maxOfCubesGame
 // }
 
-// func parseGame(game string) int {
+// func parseGame(game string) (int, map[string]int) {
 // 	gamePrefix, rounds, found := strings.Cut(game, ":")
 // 	if !found {
 // 		log.Fatal("Seperator ':' wasn't found")
 // 	}
 // 	gameId := parseGamePrefix(gamePrefix)
-// 	if roundsPossible(rounds) {
-// 		return gameId
-// 	} else {
-// 		return 0
-// 	}
+// 	maxOfCubesGame := parseRounds(rounds)
+// 	return gameId, maxOfCubesGame
 // }
 
-// // func testPossibilityGame(game string) int {
-// // 	gameId, maxOfCubesGame := parseGame(game)
-// // 	maxOfCubes := getMaxOfCubes()
-// // 	for color, gameMax := range maxOfCubesGame {
-// // 		if gameMax > maxOfCubes[color] {
-// // 			return 0
-// // 		}
-// // 	}
-// // 	return gameId
-// // }
+// func testPossibilityGame(game string) int {
+// 	gameId, maxOfCubesGame := parseGame(game)
+// 	maxOfCubes := getMaxOfCubes()
+// 	for color, gameMax := range maxOfCubesGame {
+// 		if gameMax > maxOfCubes[color] {
+// 			return 0
+// 		}
+// 	}
+// 	return gameId
+// }
 
 // func part1() {
-// 	games := readInput("input.txt")
+// 	lines := readInput("input.txt")
 // 	sum := 0
-// 	for _, game := range games {
-// 		sum += parseGame(game)
+// 	for _, line := range lines {
+// 		sum += testPossibilityGame(line)
 // 	}
 // 	fmt.Println(sum)
 // }

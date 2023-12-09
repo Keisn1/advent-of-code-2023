@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       da1b5969-e9a3-40e1-85b6-7fe9ed3e88c5
+:END:
+#+title: Day5
+#+date: [2023-12-08 Fri 12:31]
+#+startup: overview
+
+first line are the seeds to be planted
+it follow some conversion maps

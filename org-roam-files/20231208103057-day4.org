@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       cfdd4895-3c8b-4e54-a0f9-a195e69a2728
+:END:
+#+title: Day4
+#+date: [2023-12-08 Fri 10:30]
+#+startup: overview
+
+first match 1 point
+each match after doubles
+
+win copies of scratchcards below the winnin card
+5 matching numbers at 10 wins a copies of 11, 12, 13, 14, 15
+Copies are scored like normal scratchcards, same card number as the card that they were copied from
+repeat till no more copies to win
