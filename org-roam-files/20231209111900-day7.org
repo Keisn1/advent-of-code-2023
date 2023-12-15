@@ -1,0 +1,31 @@
+:PROPERTIES:
+:ID:       d20278f0-5f45-4606-a6e6-5a5070f00edd
+:END:
+#+title: Day7
+#+date: [2023-12-09 Sat 11:19]
+#+startup: overview
+
+Camel Cards (similar to poker)
+
+- list of hands
+  - order them based on the strength of each hand
+  -
+  -
+- hand = 5 cards (A to 2)
+  - strength is in order
+- five of a kind
+- four of a kind
+- full house
+- three of a kind
+- 2 pair
+- 1 pair
+- high card
+- second ordering
+  - comparing first card in each hand
+  - stronger first card wins
+  - consider all cards
+
+- corresponding *bid*
+  - bid amount
+  - hand wins amount = bid * rank
+  - rank weakest =1, strongest = len(hands)

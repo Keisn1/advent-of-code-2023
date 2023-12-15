@@ -1,0 +1,30 @@
+:PROPERTIES:
+:ID:       2120f14c-1f4f-4f32-a30a-2215c59add10
+:END:
+#+title: day6
+#+date: [2023-12-09 Sat 10:22]
+#+startup: overview
+
+- fixed amount of time allowed for each race
+- best distance ever recorded in the race
+- need to go farther in each race
+- charging the boat button
+- releasing the button is moving the boat
+- boats move faster when button was held longer
+- boats don't move until the button is released
+
+- Time: time that a race lasts
+- Distance: need to go farther than that distance
+- starting speed of 0 milimeters / second
+- each milisecond holding the button, the boat's speed increases by one milimeter per milisecond
+
+
+
+
+|          | 1. | 2. | 3. |   |
+|----------+----+----+----+---|
+| Time     |    |    |    |   |
+| distance |    |    |    |   |
+
+Time:      7  15   30 ()
+Distance:  9  40  200

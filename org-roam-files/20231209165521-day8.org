@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       eefdb0c3-9637-40aa-a126-5dcc2c91e157
+:END:
+#+title: day8
+#+date: [2023-12-09 Sat 16:55]
+#+startup: overview
+
+- use left/right instructions to navigate the network
+* left/right instructions
+- e.g.LRRRLR
+* network
